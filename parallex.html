@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* General Styling */
+        #text {
+            position: absolute;
+            top: 40%;
+            right: -100vw;
+            color: #fff;
+            white-space: nowrap;
+            font-size: 7.5vw;
+            z-index: 9;
+        }
+        
+      
+    </style>
+</head>
+<body>
+
+    <section style="background-color: #f7a6a2a9;" class="hero relative w-full flex justify-center items-center align-center overflow-hidden h-[80vh] md:h-[100vh] lg:h-[120vh] xl:h-[150vh]">
+        <img src="./clouds.svg" alt="" srcset="" id="clouds" style="width: 100%;" class="absolute top-0">
+        <img src="./sun.svg" alt="" srcset="" id="sun" style="width: 15%;" class="absolute left-[20vw] top-[12vh] z-0">
+        <h2 id="text" class="z-0">A LOVE MESSAGE</h2>
+        <div class="absolute top-[10vh] w-full h-full"id="mountains">
+            <img
+              src="./moutains.svg"
+              alt="Mountains"
+              
+              class="w-full clip-img"
+              style="object-fit: cover;"
+            />
+            <img
+              src="./water.svg"
+              alt="Water"
+              id="water"
+              class="w-full clip-img"
+              style="object-fit: cover;"
+            />
+          </div>
+          
+          
+       <div class="absolute top-[5%] w-full h-full z-10">
+        <img src="./shore.svg" alt="" srcset="" id="shore" class="w-full absolute bottom-[10%]">          
+        <img src="./tress.svg" alt="" srcset="" id="trees" style="object-fit: cover;" class="w-full absolute bottom-[20%]">
+        <img src="./right-grass.svg" alt="" srcset="" id="right-grass" style="object-fit: cover;" class="w-full absolute bottom-0">
+        <img src="./left-grass.svg" alt="" id="left-grass" style="object-fit: cover;" class="w-full absolute bottom-0 lg:-bottom-[10%]">
+       </div>
+    </section>
+
+
+
+
+
+    <script>
+        let clouds = document.getElementById('clouds');
+        let sun = document.getElementById('sun');
+        let mountains = document.getElementById('mountains');
+        let text = document.getElementById('text');
+        let water = document.getElementById('water');
+        let trees = document.getElementById('trees');
+        let shore = document.getElementById('shore');
+        let leftGrass = document.getElementById('left-grass');
+        let rightGrass = document.getElementById('right-grass');
+
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            clouds.style.left = value * 0.25 + 'px';
+            sun.style.top = value * 1.05 + 'px';
+            mountains.style.top = value * 0.5 + 'px';
+            text.style.marginRight = value * 6 + 'px'; 
+        } )
+    </script>
+
+</body>
+</html><!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In  -->

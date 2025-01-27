@@ -1,0 +1,192 @@
+/* General Styling */
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Dancing Script', cursive;
+    padding: 0;
+  background-color: #f7a6a2a9; /* Initial background color */
+  transition: background-color 0.1s linear; /* Smooth transitions */
+  }
+  
+  
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    inset: 0;
+    background: #fce7f3; /* Light Pink */
+    z-index: 50;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-end; /* Align to the bottom */
+    animation: swipeUp 1s ease-in-out forwards;
+    animation-delay: 3s;
+  }
+  
+  .loading-screen img {
+    max-width: 100%;
+    height: auto;
+    margin: 0; /* Ensure no spacing */
+    padding: 0; /* Ensure no spacing */
+  }
+
+      /* General Styling */
+      #text {
+        position: absolute;
+        top: 25%;
+        right: -50vw;
+        color: #fff;
+        white-space: nowrap;
+        font-size: 7.5vw;
+        z-index: 9;
+    }
+  
+ .title {
+    font-size: xx-large;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Ensures the image is behind the content */
+  }
+
+
+/* Parallax Section */
+.parallax {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .parallax::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Key for the parallax effect */
+    z-index: -1; /* Ensures the image is behind the content */
+  }
+  
+  
+  /* Text Content */
+  .content {
+    transform: translateZ(0.5px) scale(1.2);
+  }
+  
+
+
+  /* Typewriter Cursor */
+#typewriter::after {
+    content: "|";
+    display: inline-block;
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+  }
+
+ #typewriter {
+    background: linear-gradient(to right, #f472b6, #ec4899);
+    -webkit-background-clip: text;
+    color: transparent;
+    z-index: 10;
+  }
+
+  /* Cursor Blink Animation */
+  @keyframes blink {
+    0%, 50% {
+      opacity: 1;
+    }
+    51%, 100% {
+      opacity: 0;
+    }
+  }
+
+  #baloon-koala {
+    position: absolute;
+    bottom: -100%; /* Adjust to fine-tune starting position */
+    left: 50%;    /* Center horizontally */
+    transform: translateX(-50%); /* Center alignment */
+    transition: transform 0.1s linear; /* Smooth effect */
+    z-index: -1;
+  }
+
+  /* Animations */
+  @keyframes swipeUp {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeIn 1.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Icon */
+  .icon {
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+    fill: currentColor;
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+/* Clip the images to remove excess borders */
+.clip-img {
+  mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}
+
+
+  .btn {
+    @apply bg-white text-pink-500 font-semibold py-2 px-6 rounded-lg shadow-md;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+
+  .btn:hover {
+    @apply bg-pink-500 text-white shadow-lg;
+    transform: scale(1.1);
+  }
+
+  .btn:active {
+    transform: scale(1);
+  }
