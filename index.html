@@ -70,7 +70,12 @@
   <!-- Main Content -->
   <main>
 
-
+    <div id="music-overlay" class="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-75 z-10 space-y-4">
+      <p class="text-white text-lg mb-4">Do you want background music?</p>
+      <button id="play-music" class="bg-pink-500 text-white px-6 py-3 rounded-lg text-lg">🎵 Play Music</button>
+      <button id="no-music" class="bg-gray-500 text-white px-6 py-3 rounded-lg text-lg">🚫 Continue Without Music</button>
+    </div>
+    
 
            <!-- Section 1: Intro -->
            <section style="" class="parallax bg-pink-300 text-gray-800 h-[100vh] lg:h-[100vh]">
@@ -103,12 +108,13 @@
 
     <!-- Section 2: - -->
     <section style="" class="parallax bg-pink-200 h-[100vh] w-[100vw]">
+      
         <div class="content fade-in h-[50vh]">
           <h2 class="title opacity-0 transform translate-y-10 fly-up">You're the missing piece I've been searching for.</h2>
          
 
           
-            <img src="./assets/img/baloon-koala.svg" alt="" srcset="" id="baloon-koala" class="w-[30%] top-[50%] lg:w-[40%] lg:-bottom-[0%]">
+            <img src="./assets/img/baloon-koala.svg" alt="" srcset="" id="baloon-koala" class="w-[30%] top-[100%] lg:top-[20%] lg:w-[40%] lg:-bottom-[0%]">
           
         </div>
       </section>
@@ -195,30 +201,33 @@
 
 
 
-    <!-- Section 8: Keep the Love Alive -->
-    <section class="parallax bg-pink-400 text-white">
-      <div class="content fade-in text-center">
-        <p class="subtitle opacity-0 transform translate-y-10 fly-up">I guess what this Koala is trying to say is...</p>
-        <h2 class="title font-bold text-xl opacity-0 transform translate-y-10 fly-up md:text-3xl mb-6">
-          "WILL YOU BE MY VALENTINE???"
-        </h2>
-    
-        <!-- Buttons Section -->
-        <div class="flex flex-row justify-center space-x-4 my-6">
-          <button type="button" class="btn" id="yes-button">YES</button>
-          <button type="button" class="btn" id="no-button">NO</button>
+      <!-- Section 8: Keep the Love Alive -->
+      <section class="parallax bg-pink-400 text-white">
+        <div class="content fade-in text-center">
+          <p class="subtitle opacity-0 transform translate-y-10 fly-up">I guess what this Koala is trying to say is...</p>
+          <h2 class="title font-bold text-xl opacity-0 transform translate-y-10 fly-up md:text-3xl mb-6">
+            "WILL YOU BE MY VALENTINE???"
+          </h2>
+
+          <!-- Buttons Section -->
+          <div class="flex flex-row justify-center space-x-4 my-6">
+            <button type="button" class="btn" id="yes-button">YES</button>
+            <button type="button" class="btn" id="no-button">NO</button>
+          </div>
+
+          <!-- Koala Image -->
+          <img
+            src="./assets/img/thinking-koala.svg"
+            alt="Guitar Koala"
+            id="koala-image"
+            class="w-[30%] lg:w-[20%] xl:w-[15%] mx-auto mt-4"
+          />
+
+          <!-- Button Container for "Text me" -->
+          <div id="button-container" class="mt-4"></div>
         </div>
-    
-        <!-- Koala Image -->
-        <img
-          src="./assets/img/thinking-koala.svg"
-          alt="Guitar Koala"
-          id="koala-image"
-          class="w-[30%] lg:w-[20%] xl:w-[15%] mx-auto mt-4"
-        />
-      </div>
-    </section>
-    
+      </section>
+
 
     
 
@@ -227,9 +236,22 @@
 
 
 
+  <audio id="bg-music" loop>
+    <source src="./assets/audio/I Can't Help Falling in Love.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <audio id="swoosh-audio">
+    <source src="./assets/audio/swoosh.mp3" type="audio/mp3">
+  </audio>
+  
+
 
 
   <script src="script.js"></script>
+  <script src="sounds.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
   <script>
     let clouds = document.getElementById('clouds');
     let sun = document.getElementById('sun');
@@ -253,11 +275,19 @@
         rightGrass.style.bottom = value * 0.25 + 'px';
         leftGrass.style.right = value * 0.25 + 'px';
         leftGrass.style.bottom = value * 0.25 + 'px';
-        baloonKoala.style.left = value * 0.5 + 'px'
+        baloonKoala.style.left = value * 0.2 + 'px'
         if (baloonKoala) {
     baloonKoala.style.transform = `translateY(-${value * 0.5}px)`;
   }
     } )
 </script>
+
+
+
+
+
+
+
+
 </body>
 </html>

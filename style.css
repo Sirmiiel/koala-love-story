@@ -190,3 +190,9 @@ body {
   .btn:active {
     transform: scale(1);
   }
+
+
+  #no-button {
+    position: relative;  /* Initially set to relative for normal layout */
+    transition: all 1s ease-in-out;  /* Smooth transition */
+}
