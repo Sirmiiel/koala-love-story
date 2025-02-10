@@ -34,12 +34,30 @@ setTimeout(() => {
 // Typewriter Effect
 // Array of texts to type
 const textsToType = [
-    "Beautiful",
-    "Loving",
-    "a Queen",
-    "a 10/10",
-    "Smart",
-    "Perfect"
+    "your smile",
+    "the way you walk",
+    "your kindness",
+    "your infectious laugh",
+    "the way you make me feel",
+    "perfections",
+    "imperfections",
+    "your beautiful heart",
+    "your sparkling eyes",
+    "your bright personality",
+    "your caring nature",
+    "the way you always know how to make me smile",
+    "your gorgeous hair",
+    "YOU 💖",
+    "your sense of humor",
+    "your adventurous spirit",
+    "the way you always support me",
+    "your generosity",
+    "your intelligence",
+    "your creativity",
+    "the way you always challenge me to be my best self",
+    "your loving touch",
+    "the way you always listen to me"
+
   ];
   
   const typewriterElement = document.getElementById("typewriter");
@@ -115,3 +133,28 @@ noButton.addEventListener("click", () => {
   koalaImage.src = "./assets/img/sad-koala.png"; // Change to a sad Koala
   koalaImage.alt = "Sad Koala";
 });
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const textElements = document.querySelectorAll(".fly-up");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        } else {
+          entry.target.classList.remove("visible"); // Reset when out of view
+        }
+      });
+    },
+    { threshold: 0.35 } // Trigger when 20% of the section is visible
+  );
+
+  textElements.forEach((el) => observer.observe(el));
+});
+
