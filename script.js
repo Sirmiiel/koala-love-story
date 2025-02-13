@@ -39,8 +39,8 @@ const textsToType = [
     "your kindness",
     "your infectious laugh",
     "the way you make me feel",
-    "perfections",
-    "imperfections",
+    "your perfections",
+    "your imperfections",
     "your beautiful heart",
     "your sparkling eyes",
     "your bright personality",
@@ -251,14 +251,6 @@ noButton.addEventListener("click", () => {
   // Move "NO" button to a new position
   moveNoButton();
 });
-
-
-
-
-
-
-
-
 
 
 
